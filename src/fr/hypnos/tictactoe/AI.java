@@ -21,10 +21,7 @@ public class AI {
                 if (board[i][j] != 'X' && board[i][j] != 'O') {
                     temp = board[i][j];
                     board[i][j] = 'O';
-                    Board.drawBoard(board);
                     int score = minimax(board, 0, false);
-
-                    System.out.println("Score: " + Board.gameStatus(board));
                     board[i][j] = temp;
 
                     if (score > bestScore) {
