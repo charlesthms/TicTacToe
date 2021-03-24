@@ -7,7 +7,7 @@
 Commencer par cloner ce dépôt et lancer le jeu. Dans une console, tapez :
 ```
 $ git clone https://github.com/charlesthms/TicTacToe
-$ cd TicTacToe/out/artifacts/ && java -jar TicTacToe.jar
+$ cd TicTacToe/out/ && java -jar TicTacToe.jar
 ```
 ## Comment jouer
 Au lancement, le jeu vous demandera de choisir le mode de jeu souhaité ( **[1]** pour jouer contre un humain et **[2]** pour jouer contre une intelligence artificielle )
