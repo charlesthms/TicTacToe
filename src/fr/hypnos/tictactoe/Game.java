@@ -150,7 +150,7 @@ public class Game {
         boolean isAI = gameModeSelector();
 
         Board board = new Board();
-        Board.drawBoard(Board.getBoard());
+        board.drawBoard(Board.getBoard());
 
         while (runGame) {
             if (tour == 0) {
