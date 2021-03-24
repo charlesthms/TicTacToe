@@ -155,7 +155,6 @@ public class Game {
         while (runGame) {
             if (tour == 0) {
                 gameTurn(p1, false);
-                System.out.println(Board.availableLength(Board.getBoard()));
             } else {
                 if (isAI) {
                     gameTurn(CPU, true);
@@ -174,9 +173,9 @@ public class Game {
             } else if (currentGameStatus != 0) {
                 runGame = false;
                 if (isAI){
-                    System.out.println((currentGameStatus == 10) ? p1.NAME + " remporte la partie !" : CPU.NAME + " remporte la partie !");
+                    System.out.println((currentGameStatus == -10) ? p1.NAME + " remporte la partie !" : CPU.NAME + " remporte la partie !");
                 } else {
-                    System.out.println((currentGameStatus == 10) ? p1.NAME + " remporte la partie !" : p2.NAME + " remporte la partie !");
+                    System.out.println((currentGameStatus == -10) ? p1.NAME + " remporte la partie !" : p2.NAME + " remporte la partie !");
                 }
 
             }

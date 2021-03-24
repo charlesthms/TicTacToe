@@ -10,6 +10,12 @@ public class AI {
         return random.nextInt(10);
     }
 
+    /**
+     * Fonction permettant de choisir une case optimale.
+     *
+     * @param board plateau de jeu
+     * @return entier positif entre 1 et 9 représentant la case à jouer
+     */
     public static int aiMove(char[][] board) {
 
         char temp;
@@ -34,6 +40,12 @@ public class AI {
         return bestMove;
     }
 
+    /**
+     * Fonction permettant de transformer une coordonné en un nombre de sélection
+     *
+     * @param pos Tableau d'entiers représentant une coordonnée du plateau
+     * @return Entier correspondant à la coordonné
+     */
     private static int posToNumber(int[] pos) {
         int count = 0;
 
@@ -48,6 +60,14 @@ public class AI {
         return -1;
     }
 
+    /**
+     * Fonction MiniMax permettant une recherche récursive de la meilleure position jouable pour l'IA
+     *
+     * @param board        Plateau de jeu
+     * @param depth        Profondeur de récursion afin de régler la difficulté
+     * @param isMaximising Le joueur est-il celui à maximiser
+     * @return Entier permettant l'évaluation de la position testée
+     */
     private static int minimax(char[][] board, int depth, boolean isMaximising) {
 
         int result = Board.gameStatus(board);
@@ -56,6 +76,7 @@ public class AI {
             return result;
         }
 
+        // Si le joueur est l'IA alors on maximise son score afin d'obtenir la meilleure position
         if (isMaximising) {
             char temp;
             int highestVal = Integer.MIN_VALUE;
@@ -93,14 +114,15 @@ public class AI {
         }
     }
 
-    public static void main(String[] args) {
+    // For tests only
+    /*public static void main(String[] args) {
         char[][] b = {
-                { 'X', '2', 'X' },
-                { 'O', 'O', '6' },
-                { 'X', '8', '9' }
+                {'X', '2', 'X'},
+                {'O', 'O', '6'},
+                {'X', '8', '9'}
         };
 
         //aiMove(b);
         //System.out.println(Board.gameStatus(b));
-    }
+    }*/
 }

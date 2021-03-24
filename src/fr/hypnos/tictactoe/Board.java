@@ -21,6 +21,9 @@ public class Board {
         return count;
     }
 
+    /**
+     * Initialise et remplis le plateau de jeu.
+     */
     public void generateBoard() {
         board = new char[SIZE][SIZE];
         int location = 1;
@@ -60,6 +63,11 @@ public class Board {
         return (board[pos[0]][pos[1]] != 'X') && (board[pos[0]][pos[1]] != 'O');
     }
 
+
+    /** Fonction permettant de connaître le status du jeu
+     * @param currentBoard Représentation interne du plateau
+     * @return un entier 10 pour le joueur 2 et -10 pour le joueur 1
+     */
     public static int gameStatus(char[][] currentBoard) {
 
         // Horizontal
@@ -100,16 +108,6 @@ public class Board {
 
         // Dans tous les autres cas on return 0
         return 0;
-    }
-
-    private static Player findPlayerFromMark(char c, boolean isAI) {
-        if (c == 'X') return Game.getP1();
-
-        if (isAI) {
-            return Game.getCPU();
-        } else {
-            return Game.getP2();
-        }
     }
 
     public static char[][] getBoard() {
