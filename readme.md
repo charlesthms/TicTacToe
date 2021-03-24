@@ -6,7 +6,7 @@
 ## Installation
 Commencer par cloner ce dépôt et lancer le jeu. Dans une console, tapez :
 ```
-$ git clone https://github.com/
+$ git clone https://github.com/charlesthms/TicTacToe
 $ cd TicTacToe/out/artifacts/ && java -jar TicTacToe.jar
 ```
 ## Comment jouer
@@ -31,7 +31,7 @@ Une fois vos caractères créés, le jeu commence. Il faudra alors taper le num�
 |  7  |  8  |  9  |
 -------------------
 
-[PLAYER1] Entrez votre position et appuyez sur [ENTRER]
+[JOUEUR1] Entrez votre position et appuyez sur [ENTRER]
 2
 
 -------------------
@@ -42,7 +42,7 @@ Une fois vos caractères créés, le jeu commence. Il faudra alors taper le num�
 |  7  |  8  |  9  |
 -------------------
 
-[PLAYER2] Entrez votre position et appuyez sur [ENTRER]
+[JOUEUR2] Entrez votre position et appuyez sur [ENTRER]
 ```
 >**Attention** si vous entrez autre chose qu'un nombre le programme produira une erreur, il faudra donc relancer celui-ci. 
 >

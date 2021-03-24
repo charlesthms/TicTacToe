@@ -76,7 +76,7 @@ public class Game {
         int choice;
 
         if (isAI) {
-            choice = AI.aiMove(); // Minimax
+            choice = AI.aiMove(Board.getBoard()); // Minimax
             // choice = AI.randomMove(); // Random position
             System.out.println("Mouvement de l'IA: " + choice);
         } else {
@@ -150,12 +150,12 @@ public class Game {
         boolean isAI = gameModeSelector();
 
         Board board = new Board();
-        board.drawBoard();
+        Board.drawBoard(Board.getBoard());
 
         while (runGame) {
             if (tour == 0) {
                 gameTurn(p1, false);
-                System.out.println(Board.availableLength());
+                System.out.println(Board.availableLength(Board.getBoard()));
             } else {
                 if (isAI) {
                     gameTurn(CPU, true);
@@ -164,19 +164,19 @@ public class Game {
                 }
             }
             tour = 1 - tour;
-            board.drawBoard();
+            Board.drawBoard(Board.getBoard());
 
-            int currentGameStatus = Board.gameStatus(isAI);
+            int currentGameStatus = Board.gameStatus(Board.getBoard());
 
-            if (currentGameStatus == 0 && Board.availableLength() == 0) {
+            if (currentGameStatus == 0 && Board.availableLength(Board.getBoard()) == 0) {
                 runGame = false;
                 System.out.println("Match null !");
             } else if (currentGameStatus != 0) {
                 runGame = false;
                 if (isAI){
-                    System.out.println((currentGameStatus == 1) ? p1.NAME + " remporte la partie !" : CPU.NAME + " remporte la partie !");
+                    System.out.println((currentGameStatus == 10) ? p1.NAME + " remporte la partie !" : CPU.NAME + " remporte la partie !");
                 } else {
-                    System.out.println((currentGameStatus == 1) ? p1.NAME + " remporte la partie !" : p2.NAME + " remporte la partie !");
+                    System.out.println((currentGameStatus == 10) ? p1.NAME + " remporte la partie !" : p2.NAME + " remporte la partie !");
                 }
 
             }
